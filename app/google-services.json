@@ -1,0 +1,159 @@
+{
+  "project_info": {
+    "project_number": "713922873189",
+    "firebase_url": "https://shopnow-3ba82.firebaseio.com",
+    "project_id": "shopnow-3ba82",
+    "storage_bucket": "shopnow-3ba82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713922873189:android:b4992e88c2e3d6357a838c",
+        "android_client_info": {
+          "package_name": "com.ayetolu.samuel.e_connect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713922873189-224057ne1l4hprae15cvihdsa0amjcok.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ayetolu.samuel.e_connect",
+            "certificate_hash": "36935bbb95484c082036193afdd7da75a3affded"
+          }
+        },
+        {
+          "client_id": "713922873189-675i3hk5meosut11p3o95rel884l6q4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFxXKov0afrDYkhDXZa5T8ODpPunx-Ybg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713922873189-675i3hk5meosut11p3o95rel884l6q4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713922873189:android:7c6be6bc83f51ce77a838c",
+        "android_client_info": {
+          "package_name": "com.codingwithset.productlist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713922873189-n084rm2a3i3u9fkoo9p1phqep2rqcoff.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codingwithset.productlist",
+            "certificate_hash": "36935bbb95484c082036193afdd7da75a3affded"
+          }
+        },
+        {
+          "client_id": "713922873189-675i3hk5meosut11p3o95rel884l6q4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFxXKov0afrDYkhDXZa5T8ODpPunx-Ybg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713922873189-675i3hk5meosut11p3o95rel884l6q4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713922873189:android:d0c0ae992ca8bff67a838c",
+        "android_client_info": {
+          "package_name": "com.codingwithset.shopite_commerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713922873189-b84fuc7eu86e82j86al274p66pv99nq0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codingwithset.shopite_commerce",
+            "certificate_hash": "36935bbb95484c082036193afdd7da75a3affded"
+          }
+        },
+        {
+          "client_id": "713922873189-675i3hk5meosut11p3o95rel884l6q4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFxXKov0afrDYkhDXZa5T8ODpPunx-Ybg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713922873189-675i3hk5meosut11p3o95rel884l6q4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713922873189:android:d565907bb0a7d64b",
+        "android_client_info": {
+          "package_name": "com.codingwithset.shopnow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713922873189-cfm1jj2v4p3kvs3cd2usfvein1mvdsbf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codingwithset.shopnow",
+            "certificate_hash": "545ab0c9f7fae92ce7c8aff38b14cf9222a05abe"
+          }
+        },
+        {
+          "client_id": "713922873189-675i3hk5meosut11p3o95rel884l6q4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFxXKov0afrDYkhDXZa5T8ODpPunx-Ybg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713922873189-675i3hk5meosut11p3o95rel884l6q4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

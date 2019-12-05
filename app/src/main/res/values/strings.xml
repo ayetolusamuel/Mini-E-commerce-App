@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Product List</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="category_electronics_gadgets">Electronics &amp; Gadgets</string>
+    <string name="category_lifestyle">Lifestyle</string>
+    <string name="category_household">Home &amp; Kitchen</string>
+    <string name="category_automotive">Auto Care</string>
+    <string name="category_safety">Safety &amp; Security</string>
+    <string name="category_smart_home">Smart Home</string>
+    <string name="category_solar_lightings">Solar &amp; Lightings</string>
+    <string name="category_agricultural_products">Agricultural Products</string>
+    <string name="category_measuring_tools">Measuring Tools</string>
+    <string name="category_industrial_tools">Industrial Tools</string>
+    <string name="category_kids">Kids</string>
+    <string name="home_fragment">Home Fragment</string>
+    <string name="intent_product">intent_products</string>
+
+    <string name="product_price"> ₦%1$s</string>
+    <string name="error_message"> For %1$s</string>
+    <string name="details_intent_product">product details intent</string>
+    <string name="seller_number">+2348085385376</string>
+    <string name="sms_seller">smsto:+2348085385376</string>
+    <string name="seller_number_boss">+2348033739907</string>
+    <string name="sms_seller_boss">smsto:+2348033739907</string>
+    <string name="seller_whatsap_link">https://chat.whatsapp.com/ACxhY6MdLrt1GcQHVMEqjZ</string>
+    <string name="image_intent_product">image intent product</string>
+    <string name="first_time_user_message"> I noticed this is your first time on this app. Make sure you have internet access to enjoy fully function of the app!</string>
+    <string name="product_list">product_list</string>
+
+</resources>

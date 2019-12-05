@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.codingwithset.productlist.ui.main.MainActivity" />
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/background"
+            android:padding="8dp"
+            tools:context=".activity.ui.AllCategoryActivity">
+
+
+            <TextView
+                android:id="@+id/txt_kids"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="184dp"
+                android:text="@string/category_kids"
+                app:layout_constraintEnd_toEndOf="@+id/img_kids"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintHorizontal_bias="0.707"
+                app:layout_constraintStart_toStartOf="@+id/img_kids"
+                app:layout_constraintTop_toBottomOf="@+id/img_safety" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_kids"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="36dp"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintEnd_toEndOf="@+id/txt_safety"
+                app:layout_constraintHorizontal_bias="0.714"
+                app:layout_constraintStart_toStartOf="@+id/txt_safety"
+                app:layout_constraintTop_toBottomOf="@+id/txt_safety"
+                android:src="@drawable/kids" />
+
+            <TextView
+                android:id="@+id/txt_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="@{viewmodel::categoryClick}"
+                android:text="@string/category_household"
+                app:layout_constraintEnd_toEndOf="@+id/img_electronic"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/img_home"
+                app:layout_constraintTop_toBottomOf="@+id/img_home" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_home"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/img_auto_care"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/img_auto_care"
+                app:layout_constraintTop_toBottomOf="@+id/txt_auto_care"
+                android:onClick="@{viewmodel::categoryClick}"
+               android:src="@drawable/kitchen" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_safety"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="84dp"
+                app:layout_constraintEnd_toEndOf="@+id/img_industrial"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/img_industrial"
+                app:layout_constraintTop_toBottomOf="@+id/img_industrial"
+                android:src="@drawable/safety" />
+
+            <TextView
+                android:id="@+id/txt_safety"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/category_safety"
+                android:maxLength="25"
+                android:singleLine="true"
+                app:layout_constraintEnd_toEndOf="@+id/img_safety"
+                app:layout_constraintHorizontal_bias="0.512"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintStart_toStartOf="@+id/img_safety"
+                app:layout_constraintTop_toBottomOf="@+id/img_safety" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_auto_care"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="48dp"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintEnd_toEndOf="@+id/img_agriculture"
+                app:layout_constraintHorizontal_bias="0.725"
+                app:layout_constraintStart_toStartOf="@+id/img_agriculture"
+                app:layout_constraintTop_toBottomOf="@+id/txt_agriculture"
+                android:src="@drawable/auto_care" />
+
+            <TextView
+                android:id="@+id/txt_auto_care"
+                android:layout_width="69dp"
+                android:layout_height="17dp"
+                android:layout_marginTop="32dp"
+                android:maxLength="25"
+                android:onClick="@{viewmodel::categoryClick}"
+                android:singleLine="true"
+                android:text="@string/category_automotive"
+                app:layout_constraintEnd_toEndOf="@+id/img_auto_care"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_auto_care"
+                app:layout_constraintTop_toBottomOf="@+id/img_auto_care" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_industrial"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="196dp"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintEnd_toEndOf="@+id/img_smart_home"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/img_smart_home"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/indust" />
+
+            <TextView
+                android:id="@+id/txt_industrial_tools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/category_industrial_tools"
+                android:singleLine="true"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintEnd_toEndOf="@+id/img_industrial"
+                app:layout_constraintHorizontal_bias="0.634"
+                app:layout_constraintStart_toStartOf="@+id/img_industrial"
+                app:layout_constraintTop_toBottomOf="@+id/img_industrial" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_agriculture"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="72dp"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintEnd_toEndOf="@+id/img_electronic"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/img_electronic"
+                app:layout_constraintTop_toBottomOf="@+id/img_electronic"
+                android:src="@drawable/agric" />
+
+            <TextView
+                android:id="@+id/txt_agriculture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:maxLength="25"
+                android:onClick="@{viewmodel::categoryClick}"
+                android:singleLine="true"
+                android:text="@string/category_agricultural_products"
+                app:layout_constraintEnd_toEndOf="@+id/img_agriculture"
+                app:layout_constraintHorizontal_bias="0.852"
+                app:layout_constraintStart_toStartOf="@+id/img_agriculture"
+                app:layout_constraintTop_toBottomOf="@+id/img_agriculture" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_electronic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="16dp"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/electronics" />
+
+            <TextView
+                android:id="@+id/txt_electronic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/category_electronics_gadgets"
+                android:singleLine="true"
+                android:maxLength="25"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintEnd_toEndOf="@+id/img_electronic"
+                app:layout_constraintHorizontal_bias="0.731"
+                app:layout_constraintStart_toStartOf="@+id/img_electronic"
+                app:layout_constraintTop_toBottomOf="@+id/img_electronic" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_smart_home"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="16dp"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.569"
+                app:layout_constraintStart_toEndOf="@+id/img_electronic"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/smart_home" />
+
+            <TextView
+                android:id="@+id/txt_smart_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/category_smart_home"
+                android:singleLine="true"
+                android:maxLength="25"
+                android:onClick="@{viewmodel::categoryClick}"
+                app:layout_constraintEnd_toEndOf="@+id/img_smart_home"
+                app:layout_constraintStart_toStartOf="@+id/img_smart_home"
+                app:layout_constraintTop_toBottomOf="@+id/img_smart_home" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
+
