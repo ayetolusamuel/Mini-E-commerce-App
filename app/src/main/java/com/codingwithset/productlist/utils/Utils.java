@@ -11,7 +11,7 @@ import com.codingwithset.productlist.R;
 import com.codingwithset.productlist.model.Product;
 
 public class Utils {
-    public static final String FIRST_TIME_LAUNCH= "first_launch";
+    public static final String FIRST_TIME_LAUNCH = "first_launch";
     private static final String TAG = "Utils";
 
     public static void openWhatsapp(Context context) {
@@ -25,12 +25,14 @@ public class Utils {
         context.startActivity(intent);
 
     }
-    public static void smsSeller(Context context, Product product){
+
+    public static void smsSeller(Context context, Product product) {
         Uri sms_uri = Uri.parse(context.getString(R.string.sms_seller));
         Intent sms_intent = new Intent(Intent.ACTION_SENDTO, sms_uri);
         sms_intent.putExtra("sms_body", "Hi, am interested in : \n" + product.getName());
         context.startActivity(sms_intent);
     }
+
     public static boolean isFirstLaunch(Context context) {
         boolean flag = false;
         Log.d(TAG, "isFirstLogin: checking if this is the first login.");
@@ -63,7 +65,6 @@ public class Utils {
         }
         return flag;
     }
-
 
 
 }

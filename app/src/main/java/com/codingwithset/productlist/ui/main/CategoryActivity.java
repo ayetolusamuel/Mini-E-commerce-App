@@ -2,7 +2,10 @@ package com.codingwithset.productlist.ui.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -10,6 +13,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,13 +24,17 @@ import android.widget.Toast;
 
 import com.codingwithset.productlist.R;
 import com.codingwithset.productlist.adapter.ProductAdapter;
+import com.codingwithset.productlist.executor.AppExecutors;
 import com.codingwithset.productlist.model.Product;
-import com.codingwithset.productlist.productInterface.OnFilterProductListener;
 import com.codingwithset.productlist.productInterface.ProductInterface;
 import com.codingwithset.productlist.utils.NetworkStatus;
 import com.codingwithset.productlist.utils.Utils;
 import com.codingwithset.productlist.viewmodel.ProductViewModel;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryActivity extends AppCompatActivity {
@@ -42,6 +50,7 @@ public class CategoryActivity extends AppCompatActivity {
     private String productSearch;
     private static final String TAG = "CategoryActivity";
     private String category;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +73,7 @@ public class CategoryActivity extends AppCompatActivity {
 
         if (Utils.isFirstLaunch(this)) {
             if (!NetworkStatus.getInstance(this).isOnline()) {
-                Toast.makeText(this, "Please check internet connection!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please check your internet connection!", Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -74,6 +83,46 @@ public class CategoryActivity extends AppCompatActivity {
         getProduct();
         initSearchView();
         onSwipe();
+
+
+
+
+    }
+
+    private void mergeMeasuringAndIndustrial() {
+        if (category.equals(getString(R.string.category_industrial_tools))){
+            List<Product> products = new ArrayList<>();
+            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+            Gson gson = new Gson();
+            String jsonMeasuring = sharedPrefs.getString(getString(R.string.measuring), "");
+            String jsonIndustrial = sharedPrefs.getString(getString(R.string.industrial), "");
+
+            Type type = new TypeToken<List<Product>>() {}.getType();
+            List<Product> measuring = gson.fromJson(jsonMeasuring, type);
+            List<Product> industrial = gson.fromJson(jsonIndustrial, type);
+
+            try{
+                if (measuring != null && industrial != null){
+                    products.addAll(measuring);
+                    products.addAll(industrial);
+                    mLayout.setVisibility(View.GONE);
+                    if (products != null){
+                        productAdapter = new ProductAdapter(getApplicationContext(), products);
+                        mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                        mRecyclerView.setAdapter(productAdapter);
+                        productAdapter.notifyDataSetChanged();
+                        intentAction();
+                    }
+
+                }else{
+                    Toast.makeText(this, "error if fetching data.....", Toast.LENGTH_SHORT).show();
+                }
+
+            }catch (NullPointerException ex){
+                ex.printStackTrace();
+                Log.d(TAG, "mergeMeasuringAndIndustrial: ");
+            }
+            }
 
     }
 
@@ -123,7 +172,6 @@ public class CategoryActivity extends AppCompatActivity {
                     mRelativeLayout.setVisibility(View.VISIBLE);
                 });
 
-                ;
             } else {
                 runOnUiThread(() -> mRelativeLayout.setVisibility(View.GONE));
             }
@@ -136,25 +184,25 @@ public class CategoryActivity extends AppCompatActivity {
 
         if (category != null) {
             Log.d(TAG, "getProduct: " + category);
-            mViewModel.getProductBaseCategory(category).observe(this, products -> {
+            if (!category.equals(getString(R.string.category_industrial_tools))) {
+                mViewModel.getProductBaseCategory(category).observe(this, products -> {
+                    mLayout.setVisibility(View.GONE);
+                    productAdapter = new ProductAdapter(getApplicationContext(), products);
+                    mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    mRecyclerView.setAdapter(productAdapter);
+                    productAdapter.notifyDataSetChanged();
+                    intentAction();
+                });
+            }else{
+                mergeMeasuringAndIndustrial();
+            }
 
-
-                mLayout.setVisibility(View.GONE);
-                productAdapter = new ProductAdapter(getApplicationContext(), products);
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                mRecyclerView.setAdapter(productAdapter);
-                productAdapter.notifyDataSetChanged();
-
-                intentAction();
-
-            });
         }
 
     }
 
     private void intentAction() {
         productAdapter.setOnclickListener((view, product) -> {
-
             Intent intent1 = new Intent(view.getContext(), DetailActivity.class);
             Bundle bundle = new Bundle();
             bundle.putParcelable(view.getContext().getResources().getString(R.string.details_intent_product), product);
@@ -177,7 +225,6 @@ public class CategoryActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(List<Product> productList) {
                     Log.d(TAG, "onSuccess: " + productList.size());
-
                     productAdapter.setFilteredProduct(productList);
                     mViewModel.insertProduct(productList);
                     Toast.makeText(CategoryActivity.this, "Record updated successfully", Toast.LENGTH_SHORT).show();
@@ -190,6 +237,7 @@ public class CategoryActivity extends AppCompatActivity {
                     Log.d(TAG, "onFailed: ");
                     mRefreshLayout.setEnabled(false);
                 }
+
             });
         });
 

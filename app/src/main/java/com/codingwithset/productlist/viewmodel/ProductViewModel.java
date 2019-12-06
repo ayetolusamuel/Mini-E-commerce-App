@@ -4,7 +4,6 @@ import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-
 import com.codingwithset.productlist.model.Product;
 import com.codingwithset.productlist.productInterface.ProductInterface;
 import com.codingwithset.productlist.repository.ProductRepository;
@@ -43,4 +42,7 @@ public class ProductViewModel extends AndroidViewModel {
     public float getProductCount() {
         return mRepository.getProductCount();
     }
+
+
+
 }

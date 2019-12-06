@@ -29,5 +29,7 @@
     <string name="image_intent_product">image intent product</string>
     <string name="first_time_user_message"> I noticed this is your first time on this app. Make sure you have internet access to enjoy fully function of the app!</string>
     <string name="product_list">product_list</string>
+    <string name="measuring">measuring</string>
+    <string name="industrial">industrial</string>
 
 </resources>
