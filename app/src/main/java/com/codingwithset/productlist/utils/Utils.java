@@ -15,19 +15,19 @@ public class Utils {
     private static final String TAG = "Utils";
 
     public static void openWhatsapp(Context context) {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.seller_whatsap_link)));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.seller_whatsap_link_boss)));
         context.startActivity(browserIntent);
     }
 
     public static void callSeller(Context context) {
-        String phone = context.getString(R.string.seller_number);
+        String phone = context.getString(R.string.seller_number_boss);
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
         context.startActivity(intent);
 
     }
 
     public static void smsSeller(Context context, Product product) {
-        Uri sms_uri = Uri.parse(context.getString(R.string.sms_seller));
+        Uri sms_uri = Uri.parse(context.getString(R.string.sms_seller_boss));
         Intent sms_intent = new Intent(Intent.ACTION_SENDTO, sms_uri);
         sms_intent.putExtra("sms_body", "Hi, am interested in : \n" + product.getName());
         context.startActivity(sms_intent);

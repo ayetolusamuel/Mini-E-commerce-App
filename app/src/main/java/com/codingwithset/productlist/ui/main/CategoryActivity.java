@@ -91,6 +91,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     private void mergeMeasuringAndIndustrial() {
         if (category.equals(getString(R.string.category_industrial_tools))){
+            mRefreshLayout.setEnabled(false);
             List<Product> products = new ArrayList<>();
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
             Gson gson = new Gson();
